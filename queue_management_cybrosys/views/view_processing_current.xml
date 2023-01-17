@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="view_processing_current" name="View Display">
+            <div style="width: 100%; height: 100%; background-color: #c7cdc7;">
+                <br/>
+                <div style="background-color: white;
+                            width: 500px;
+                            height: 530px;
+                            border-radius: 15px;
+                            margin-left: 37%;
+                            margin-top: 8%;">
+                    <form t-att-action="url" metod="post">
+                    <div>
+                        <br/>
+                        <u>
+                            <h2 align="center">Customer Details</h2>
+                        </u>
+                        <br/>
+                    </div>
+                    <div style="width: 100%;
+                                height: 55px;">
+                        <t t-foreach="vals" t-as="vals">
+                        <div style="float:left;margin-left: 20px;">
+                            <label style="font-size: 20px;">
+                                <b>User :</b>
+                                <span>
+                                   <t t-esc="vals['user']"/>
+                                    <input type="hidden" t-att-value="vals['user']" name="user" id="user"/>
+                                </span>
+                                <br/>
+                                <b>Token No :</b>
+                                <span>
+                                    <t t-esc="vals['token']"/>
+                                    <input type="hidden" t-att-value="vals['token']" name="token" id="token"/>
+                                </span>
+                            </label>
+                        </div>
+                        <div style="float:right;margin-right: 20px;">
+                            <label style="font-size: 20px;">
+                                <b>Mobile No :</b>
+                                <span>
+                                    <t t-esc="vals['mobile']"/>
+                                    <input type="hidden" t-att-value="vals['mobile']" name="mobile" id="mobile"/>
+                                </span>
+                                <br/>
+                                <b>Department :</b>
+                                <span>
+                                    <t t-esc="vals['department']"/>
+                                    <input type="hidden" t-att-value="vals['department']" name="department" id="department"/>
+                                </span>
+                            </label>
+                        </div>
+                        </t>
+                    </div>
+                    <hr style="margin: 8px;"></hr>
+                    <div>
+                        <h3 style="margin-left: 18px;">Customer Query</h3>
+                        <textarea style="margin-left: 20px;" id="query"
+                                  name="query" rows="4" cols="55">
+                        </textarea>
+                    </div>
+                    <div>
+                        <h3 style="margin-left: 18px;">Feedback</h3>
+                        <textarea style="margin-left: 20px;" id="feedback"
+                                  name="feedback" rows="4" cols="55">
+                        </textarea>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div>
+                        <button type="submit" class="btn btn-primary"
+                                style="padding: 10px;
+                                        font-size: 14px;
+                                        background-color: black;
+                                        color: white;
+                                        border-radius: 10px;
+                                        margin-left: 10px;">SUBMIT
+                        </button>
+                        <div style="float:left;">
+                            <select id="token_state" name="token_state"
+                                    class="form-control" required=""
+                                    style="width: 300px;
+                                            height: 40px;
+                                            font-size: larger;
+                                            margin-left: 53px;">
+                                <option value="done">
+                                    Done
+                                </option>
+                                <option value="progress">
+                                    Progress
+                                </option>
+                                <option value="cancel">
+                                    Cancel
+                                </option>
+                            </select>
+                            <br/>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

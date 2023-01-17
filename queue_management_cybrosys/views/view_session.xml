@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="view_session" name="View Display">
+            <div style="width: 100%; height: 100%; background-color: #c7cdc7;">
+                <br/>
+                <a href="/" class="btn btn-primary" style=" border: 2px solid black;
+                                                            padding: 5px;
+                                                            color: black;
+                                                            margin-left: 96.7%;">
+                    Close
+                </a>
+                <div style="background-color: white;
+                            width: 500px;
+                            height: 500px;
+                            border-radius: 15px;
+                            margin-left: 37%;
+                            margin-top: 8%;
+                            display: flex;
+                            justify-content: center;">
+                    <form action="/token/view" metod="post">
+                        <h3>Enter Your Details</h3>
+                        <br/>
+                        <br/>
+                        <br/>
+                        Name :
+                        <br/>
+                        <input type="hidden" t-att-value="id" name="session" id="session"/>
+                        <input type="text" required="True" name="name" id="name"
+                               style="width: 350px;height: 45px;font-size: larger;"/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        Mobile No :
+                        <br/>
+                        <input type="number" required="True" name="mobile" id="mobile"
+                               style="width: 350px;height: 45px;font-size: larger;"/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        Department :
+                        <br/>
+                        <select name="department" id="department" required="True"
+                                style="width: 350px;height: 45px;font-size: larger;">
+                            <option></option>
+                            <t t-foreach="vals" t-as="val">
+                                <option t-att-id="val['id']"
+                                        t-esc="val['name']"></option>
+                            </t>
+                        </select><br/><br/><br/>
+                        <button type="submit" style="padding: 13px;
+                                                    font-size: medium;
+                                                    border: 2px solid;
+                                                    border-radius: 6px;
+                                                    background-color: black;
+                                                    color: white;">Generate Token</button>
+                    </form>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

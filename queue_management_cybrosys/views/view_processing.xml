@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+      <template id="view_processing" name="View Display">
+            <div style="width: 100%; height: 100%; background-color: #c7cdc7;">
+                <br/>
+                <a href="/" class="btn btn-primary" style=" border: 2px solid black;
+                                                            padding: 5px;
+                                                            color: black;
+                                                            margin-left: 96.7%;">X</a>
+                <div class="row" style="width: 100%;
+                                        display: flex;
+                                        justify-content: space-evenly;
+                                        margin-top: 140px;">
+                    <div class="col" style="width: 500px;
+                                            height: 500px;
+                                            background-color: #c3c3c3c7;
+                                            border-radius: 10px;">
+                        <div>
+                            <h3 style="margin-left: 50px;">User :</h3>
+                            <h3 style="margin-left: 50px;">Mitchell Admin</h3><br/>
+                            <hr></hr>
+                            <h3 style="margin-left: 50px;">Counter :</h3>
+                            <h3 style="margin-left: 50px;">Counter 1</h3><br/>
+                            <hr></hr>
+                            <h3 style="margin-left: 50px;">Department :</h3>
+                            <h3 style="margin-left: 50px;">Books</h3><br/>
+                            <hr></hr>
+                            <a href="/processing/current">
+                            <button style="padding: 14px;
+                                            margin-left: 360px;
+                                            margin-top: 25px;
+                                            background-color: #226625;
+                                            color: white;
+                                            font-size: medium;
+                                            border-radius: 13px;"
+                                            id="call_next">Call Next</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col" style="width: 500px;
+                                            height: 500px;
+                                            background-color: #c3c3c3c7;
+                                            border-radius: 10px;
+                                            overflow-y: auto;">
+                        <h3 style="margin-left: 190px;
+                                   font-size: x-large;">Queue Listing</h3>
+                        <hr></hr>
+                        <br/>
+                        <table style="width: 100%;font-size: larger;" class="table">
+                          <tr style="font-size: x-large;border-bottom: 3px solid black;">
+                            <th>S. No.</th>
+                            <th>Counter</th>
+                            <th>Token No.</th>
+                            <th>Called</th>
+                            <th>Recall</th>
+                          </tr>
+                            <t t-foreach="vals" t-as="vals">
+                                <tr>
+                                    <td align="center"><t t-esc="vals['si_no']"/></td>
+                                    <td align="center"><t t-esc="vals['counter']"/></td>
+                                    <td align="center"><t t-esc="vals['token']"/></td>
+                                    <td align="center"><t t-esc="vals['called']"/></td>
+                                    <td align="center"><img style="width:20px;height:20px;" src="https://e7.pngegg.com/pngimages/390/868/png-clipart-computer-icons-undo-font-awesome-arrow-angle-triangle-thumbnail.png" /></td>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </template>
+</odoo>

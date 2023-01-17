@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+     <record id="interface_kanban" model="ir.ui.view">
+        <field name="name">interface.kanban</field>
+        <field name="model">interface</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="sequence_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                            <div>
+                                <field name="state"/>
+                            </div>
+                            <br></br>
+                            <div>
+                                <field name="user_id"/>
+                            </div>
+                            <br></br>
+                            <br></br>
+                            <div>
+                                <button class="btn-primary" name="start_session" type="object" states="draft">Start Session</button>
+                                <button class="btn-primary" name="resume_session" type="object" states="stopped">Resume</button>
+                                <button class="btn-secondary" name="close_session" type="object" states="opened,stopped">Close</button>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="interface_form" model="ir.ui.view">
+        <field name="name">interface.form</field>
+        <field name="model">interface</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+<!--                    	<div class="oe_button_box" name="button_box">-->
+<!--						<button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">-->
+<!--							<field name="active" widget="boolean_button"/>-->
+<!--						</button>-->
+<!--					</div>-->
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence_id"/>
+                        <field name="user_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="interface_tree" model="ir.ui.view">
+        <field name="name">interface.tree</field>
+        <field name="model">interface</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sequence_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="interface_action" model="ir.actions.act_window">
+        <field name="name">Interface</field>
+        <field name="res_model">interface</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+</odoo>

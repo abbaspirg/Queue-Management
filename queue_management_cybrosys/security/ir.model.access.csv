@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_counter,access.counter,model_counter,base.group_user,1,1,1,1
+access_processing,access.processing,model_processing,base.group_user,1,1,1,1
+access_sequence,access.sequence,model_sequence,base.group_user,1,1,1,1
+access_departments,access.departments,model_departments,base.group_user,1,1,1,1
+access_tokens,access.tokens,model_tokens,base.group_user,1,1,1,1
+access_sessions,access.sessions,model_sessions,base.group_user,1,1,1,1
+access_interface,access.interface,model_interface,base.group_user,1,1,1,1
+access_process_wizard,access.process.wizard,model_process_wizard,base.group_user,1,1,1,1
