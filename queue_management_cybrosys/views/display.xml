@@ -2,12 +2,37 @@
 <odoo>
     <data>
         <template id="view_display" name="View Display">
+            <script type="text/javascript" src="/queue_management_cybrosys/static/src/js/counter.js"/>
             <div style="width: 100%; height: 100%; background-color: #c7cdc7;">
                 <br/>
-                <a href="/" class="btn btn-primary" style=" border: 2px solid black;
-                                                            padding: 5px;
-                                                            color: black;
-                                                            margin-left: 96.7%;">X</a>
+                <a href="/display/close"><button class="btn btn-primary" style=" border: 2px solid black;
+                                                            padding: 7px;
+                                                            color: white;
+                                                            background-color: black;
+                                                            margin-left: 95%;
+                                                            cursor: pointer;
+                                                            border-radius: 10px;">Close
+            </button></a>
+                <br/>
+                <br/>
+                <br/>
+                <table style="width:100%;font-size: -webkit-xxx-large;padding: 40px;">
+                    <tr style="height: 150px;
+                                background-color: black;
+                                color: white;
+                                border: 2px solid white;">
+                        <th style="border: 2px solid;">Counter</th>
+                        <th style="border: 2px solid;">Department</th>
+                        <th style="border: 2px solid;">Token</th>
+                    </tr>
+                    <t t-foreach="vals" t-as="vals">
+                    <tr style="height: 150px;">
+                        <td align="center" style="border: 2px solid;"><t t-esc="vals['counter']"/></td>
+                        <td align="center" style="border: 2px solid;"><t t-esc="vals['department']"/></td>
+                        <td align="center" style="border: 2px solid;background-color: yellowgreen;"><t t-esc="vals['token']"/></td>
+                    </tr>
+                    </t>
+                </table>
             </div>
         </template>
     </data>

@@ -13,6 +13,7 @@ class Counter(models.Model):
                               ('stopped', 'Stopped'),
                               ('closed', 'Closed'), ],
                              default='draft')
+    url = fields.Char()
 
     def start_processing(self):
         print(self)
@@ -25,7 +26,19 @@ class Counter(models.Model):
         }
 
     def resume_processing(self):
-        print(self)
+        url = '/processing/' + str(self.id)
+        self.state = 'opened'
+        processing = self.env['processing'].sudo().search([
+            ('counter_id', '=', self.id),
+            ('state', '=', 'stopped')])
+        processing.sudo().write({
+            'state': 'in_progress'
+        })
+        return {
+            'type': 'ir.actions.act_url',
+            'target': 'self',
+            'url': url,
+        }
 
     def close_processing(self):
-        print(self)
+        self.state = 'closed'

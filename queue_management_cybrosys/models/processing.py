@@ -15,3 +15,4 @@ class Processing(models.Model):
                               ('stopped', 'Stopped'),
                               ('closed', 'Closed'),
                               ], default='open')
+    current_token = fields.Char('token')

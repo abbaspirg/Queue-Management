@@ -15,6 +15,8 @@ class ProcessWizard(models.TransientModel):
             'state': 'in_progress',
             'department_id': self.department_id.id,
         })
+        counter = self.env['counter'].browse(int(counter_id))
+        counter.state = 'opened'
         return {
             'type': 'ir.actions.act_url',
             'target': 'self',

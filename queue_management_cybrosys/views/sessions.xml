@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <record id="seq_sessions" model="ir.sequence">
+        <field name="name">Sessions_Sequence</field>
+        <field name="code">sessions.seq</field>
+        <field name="prefix">SESSION/%(year)s/</field>
+        <field name="padding">3</field>
+    </record>
     <record id="sessions_form" model="ir.ui.view">
         <field name="name">sessions.form</field>
         <field name="model">sessions</field>
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="session_open" type="object" string="Open Session" states="open" class="oe_highlight"/>
-                    <button name="session_view" type="object" string="Open View" states="in_progress" class="oe_highlight"/>
-                    <button name="session_closing_control" type="object" string="End Session" states="in_progress" class="oe_highlight"/>
-                    <button name="session_close" type="object" string="Close Session" states="stopped" class="oe_highlight"/>
+                    <button name="session_open" type="object"
+                            string="Open Session" states="open"
+                            class="oe_highlight"/>
+                    <button name="session_view" type="object"
+                            string="Open View" states="in_progress"
+                            class="oe_highlight"/>
+                    <button name="session_closing_control" type="object"
+                            string="End Session" states="in_progress"
+                            class="oe_highlight"/>
+                    <button name="session_close" type="object"
+                            string="Close Session" states="stopped"
+                            class="oe_highlight"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>

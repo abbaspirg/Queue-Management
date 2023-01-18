@@ -29,7 +29,13 @@ class Interface(models.Model):
         }
 
     def resume_session(self):
+        url = '/session/' + str(self.id)
         self.state = 'opened'
+        return {
+            'type': 'ir.actions.act_url',
+            'target': 'self',
+            'url': url,
+        }
 
     def close_session(self):
-        self.state = 'closed'
+        self.state = 'draft'

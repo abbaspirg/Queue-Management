@@ -28,9 +28,6 @@
         'views/menus.xml',
     ],
     'assets': {
-        # 'web.assets_frontend': [
-        #     'queue_management_cybrosys/static/src/js/counter.js',
-        # ],
         'web.assets_backend': [
             'queue_management_cybrosys/static/src/js/dashboard.js',
             'queue_management_cybrosys/static/src/xml/dashboard.xml',

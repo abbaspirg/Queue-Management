@@ -10,7 +10,7 @@
                             border-radius: 15px;
                             margin-left: 37%;
                             margin-top: 8%;">
-                    <form t-att-action="url" metod="post">
+                    <form t-att-action="url" method="post">
                     <div>
                         <br/>
                         <u>
@@ -56,15 +56,11 @@
                     <hr style="margin: 8px;"></hr>
                     <div>
                         <h3 style="margin-left: 18px;">Customer Query</h3>
-                        <textarea style="margin-left: 20px;" id="query"
-                                  name="query" rows="4" cols="55">
-                        </textarea>
+                        <textarea style="margin-left: 20px;" id="query" name="query" rows="4" cols="55"></textarea>
                     </div>
                     <div>
                         <h3 style="margin-left: 18px;">Feedback</h3>
-                        <textarea style="margin-left: 20px;" id="feedback"
-                                  name="feedback" rows="4" cols="55">
-                        </textarea>
+                        <textarea style="margin-left: 20px;" id="feedback" name="feedback" rows="4" cols="55"></textarea>
                     </div>
                     <br/>
                     <br/>

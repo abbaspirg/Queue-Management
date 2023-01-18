@@ -3,10 +3,13 @@
       <template id="view_processing" name="View Display">
             <div style="width: 100%; height: 100%; background-color: #c7cdc7;">
                 <br/>
-                <a href="/" class="btn btn-primary" style=" border: 2px solid black;
-                                                            padding: 5px;
-                                                            color: black;
-                                                            margin-left: 96.7%;">X</a>
+                <a t-att-href="close_url"><button class="btn btn-primary" style=" border: 2px solid black;
+                                                            padding: 7px;
+                                                            color: white;
+                                                            background-color: black;
+                                                            margin-left: 95%;
+                                                            cursor: pointer;
+                                                            border-radius: 10px;">Close</button></a>
                 <div class="row" style="width: 100%;
                                         display: flex;
                                         justify-content: space-evenly;
@@ -16,16 +19,19 @@
                                             background-color: #c3c3c3c7;
                                             border-radius: 10px;">
                         <div>
+                            <t t-foreach="counter" t-as="counter">
                             <h3 style="margin-left: 50px;">User :</h3>
-                            <h3 style="margin-left: 50px;">Mitchell Admin</h3><br/>
+                            <h3 style="margin-left: 50px;"><t t-esc="counter['user']"/></h3><br/>
                             <hr></hr>
                             <h3 style="margin-left: 50px;">Counter :</h3>
-                            <h3 style="margin-left: 50px;">Counter 1</h3><br/>
+                            <h3 style="margin-left: 50px;"><t t-esc="counter['counter']"/></h3><br/>
                             <hr></hr>
                             <h3 style="margin-left: 50px;">Department :</h3>
-                            <h3 style="margin-left: 50px;">Books</h3><br/>
+                            <h3 style="margin-left: 50px;"><t t-esc="counter['department']"/></h3><br/>
                             <hr></hr>
-                            <a href="/processing/current">
+                            </t>
+                            <t t-if="call == True">
+                            <a t-att-href="url">
                             <button style="padding: 14px;
                                             margin-left: 360px;
                                             margin-top: 25px;
@@ -35,6 +41,18 @@
                                             border-radius: 13px;"
                                             id="call_next">Call Next</button>
                             </a>
+                            </t>
+                            <t t-else="">
+                                <button style="padding: 14px;
+                                            margin-left: 50px;
+                                            width: 400px;
+                                            margin-top: 25px;
+                                            background-color: green;
+                                            color: black;
+                                            font-size: medium;
+                                            border-radius: 13px;"
+                                            id="call_next">Completed</button>
+                            </t>
                         </div>
                     </div>
                     <div class="col" style="width: 500px;
@@ -60,7 +78,12 @@
                                     <td align="center"><t t-esc="vals['counter']"/></td>
                                     <td align="center"><t t-esc="vals['token']"/></td>
                                     <td align="center"><t t-esc="vals['called']"/></td>
-                                    <td align="center"><img style="width:20px;height:20px;" src="https://e7.pngegg.com/pngimages/390/868/png-clipart-computer-icons-undo-font-awesome-arrow-angle-triangle-thumbnail.png" /></td>
+                                    <t t-if="vals['recall'] == 'Yes'">
+                                    <td align="center"><a t-att-href="vals['url']"><img style="width:20px;height:20px;" src="https://e7.pngegg.com/pngimages/390/868/png-clipart-computer-icons-undo-font-awesome-arrow-angle-triangle-thumbnail.png" /></a></td>
+                                    </t>
+                                    <t t-else="">
+                                        <td align="center"></td>
+                                    </t>
                                 </tr>
                             </t>
                         </table>

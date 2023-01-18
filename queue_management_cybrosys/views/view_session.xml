@@ -4,11 +4,14 @@
         <template id="view_session" name="View Display">
             <div style="width: 100%; height: 100%; background-color: #c7cdc7;">
                 <br/>
-                <a href="/" class="btn btn-primary" style=" border: 2px solid black;
-                                                            padding: 5px;
-                                                            color: black;
-                                                            margin-left: 96.7%;">
-                    Close
+                <a t-att-href="url"><button class="btn btn-primary" style=" border: 2px solid black;
+                                                            padding: 7px;
+                                                            color: white;
+                                                            background-color: black;
+                                                            margin-left: 95%;
+                                                            cursor: pointer;
+                                                            border-radius: 10px;">
+                    Close</button>
                 </a>
                 <div style="background-color: white;
                             width: 500px;
