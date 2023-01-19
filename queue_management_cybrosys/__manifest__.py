@@ -8,7 +8,7 @@
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': 'https://www.cybrosys.com',
-    'depends': ['base'],
+    'depends': ['base', 'web'],
     'data': [
         'security/ir.model.access.csv',
         'views/counter.xml',
@@ -31,7 +31,11 @@
         'web.assets_backend': [
             'queue_management_cybrosys/static/src/js/dashboard.js',
             'queue_management_cybrosys/static/src/xml/dashboard.xml',
+            'https://www.gstatic.com/charts/loader.js',
         ],
+        # 'web.assets_frontend': [
+        #     'queue_management_cybrosys/static/src/js/counter.js',
+        # ],
     },
     'demo': [],
     'images': [],

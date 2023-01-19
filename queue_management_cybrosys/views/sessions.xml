@@ -10,7 +10,7 @@
         <field name="name">sessions.form</field>
         <field name="model">sessions</field>
         <field name="arch" type="xml">
-            <form>
+            <form create="0">
                 <header>
                     <button name="session_open" type="object"
                             string="Open Session" states="open"
@@ -30,6 +30,7 @@
                     <group>
                         <field name="name"/>
                         <field name="user_id"/>
+                        <field name="date_session"/>
                         <field name="interface_id"/>
                     </group>
                 </sheet>
@@ -40,7 +41,7 @@
         <field name="name">sessions.tree</field>
         <field name="model">sessions</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree create="0">
                 <field name="name"/>
                 <field name="user_id"/>
                 <field name="interface_id"/>

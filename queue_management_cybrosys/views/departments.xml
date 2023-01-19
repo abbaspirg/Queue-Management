@@ -15,7 +15,7 @@
         <field name="name">departments.tree</field>
         <field name="model">departments</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="bottom">
                 <field name="name"/>
             </tree>
         </field>
@@ -23,6 +23,6 @@
      <record id="departments_action" model="ir.actions.act_window">
         <field name="name">Departments</field>
         <field name="res_model">departments</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree</field>
     </record>
 </odoo>

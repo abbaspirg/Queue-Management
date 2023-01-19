@@ -2,6 +2,7 @@
 <odoo>
     <data>
         <template id="view_tokens" name="View Tokens">
+
             <div style="width: 100%; height: 100%; background-color: #c7cdc7;">
                 <br/>
                 <div style="background-color: white;
@@ -11,11 +12,12 @@
                             margin-left: 37%;
                             margin-top: 8%;">
                     <br/>
-                    <div align="center"
+                    <div id="generator" align="center"
                          style="color:green;font-size:xx-large;">
                         <p>Your token generated successfully</p>
                     </div>
                     <br/>
+                    <div id="print_area">
                     <div align="center">
                         <p style="font-family: Arial-BoldMt;font-size:23px;color:black;">
                             <b>TOKEN NO :</b>
@@ -24,6 +26,7 @@
                     <div align="center"
                          style="font-family: Arial-BoldMt;font-size:xxx-large;color:blue;">
                         <span><t t-esc="token"/></span>
+                    </div>
                     </div>
                     <br/>
                     <br/>
@@ -34,7 +37,7 @@
                             <label style="font-size: 20px;">
                                 <b>Attending:</b>
                                 <span>
-                                    000
+                                    <t t-esc="attending"/>
                                 </span>
                             </label>
                         </div>
@@ -42,7 +45,7 @@
                             <label style="font-size: 20px;">
                                 <b>Your position:</b>
                                 <span>
-                                    0003
+                                    <t t-esc="position"/>
                                 </span>
                             </label>
                         </div>
@@ -68,12 +71,14 @@
                                             background-color: black;
                                             color: white;
                                             font-size: medium;
-                                            border-radius: 10px;">Print Token</button>
+                                            border-radius: 10px;"
+                                            id="print_token">Print Token</button>
 
                         </div>
                     </div>
                 </div>
             </div>
+            <script type="text/javascript" src="/queue_management_cybrosys/static/src/js/queue_tokens.js"/>
         </template>
     </data>
 </odoo>

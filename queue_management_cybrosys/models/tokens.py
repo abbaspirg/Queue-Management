@@ -17,3 +17,4 @@ class Tokens(models.Model):
                               ('done', 'Done'),
                               ('cancelled', 'Cancelled'),
                               ], default='draft')
+    date_token = fields.Date('Date', default=fields.Date.today())

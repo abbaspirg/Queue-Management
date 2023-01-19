@@ -4,7 +4,7 @@
         <field name="name">tokens.form</field>
         <field name="model">tokens</field>
         <field name="arch" type="xml">
-            <form>
+            <form create="0">
                 <header>
                     <field name="state" widget="statusbar"/>
                 </header>
@@ -16,6 +16,7 @@
                             <field name="mobile"/>
                         </group>
                         <group>
+                            <field name="date_token"/>
                             <field name="session_id"/>
                             <field name="department_id"/>
                         </group>
@@ -38,7 +39,7 @@
         <field name="name">tokens.tree</field>
         <field name="model">tokens</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree create="0">
                 <field name="token"/>
                 <field name="name"/>
                 <field name="mobile"/>

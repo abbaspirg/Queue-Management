@@ -57,10 +57,21 @@ class Display(http.Controller):
             'session_id': session.id,
 
         })
+        current_processing = request.env['processing'].sudo().search([
+            ('department_id', '=', department.id),
+            ('state', '=', 'in_progress'),
+        ], limit=1)
+        if current_processing:
+            attending = current_processing.current_token
+            position = f'{(int(new_token) - int(current_processing.current_token)):04}'
+        else:
+            attending = '--'
+            position = new_token
         token_no = token.token
         url = '/session/' + str(post.get('session'))
         return request.render('queue_management_cybrosys.view_tokens', {
-            'token': token_no, 'url': url
+            'token': token_no, 'url': url, 'attending': attending,
+            'position': position,
         })
 
     @http.route(['/processing/<int:counter_id>'], auth='public', type='http',

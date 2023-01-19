@@ -4,10 +4,11 @@
         <field name="name">processing.form</field>
         <field name="model">processing</field>
         <field name="arch" type="xml">
-            <form>
+            <form create="0">
                 <sheet>
                     <group>
                         <field name="user_id"/>
+                        <field name="date_processing"/>
                         <field name="counter_id"/>
                         <field name="department_id"/>
                         <field name="state"/>
@@ -20,7 +21,7 @@
         <field name="name">processing.tree</field>
         <field name="model">processing</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree create="0">
                 <field name="user_id"/>
                 <field name="counter_id"/>
                 <field name="department_id"/>

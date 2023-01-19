@@ -5,7 +5,7 @@ class Interface(models.Model):
     _name = 'interface'
     _description = 'Interface'
 
-    name = fields.Char()
+    name = fields.Char(required=True)
     sequence_id = fields.Many2one('sequence')
     user_id = fields.Many2one('res.users',
                               default=lambda self: self.env.user)
@@ -31,6 +31,11 @@ class Interface(models.Model):
     def resume_session(self):
         url = '/session/' + str(self.id)
         self.state = 'opened'
+        session = self.env['sessions'].search([
+           ('interface_id', '=', self.id),
+           ('state', '=', 'stopped'),
+        ])
+        session.state = 'in_progress'
         return {
             'type': 'ir.actions.act_url',
             'target': 'self',
@@ -38,4 +43,4 @@ class Interface(models.Model):
         }
 
     def close_session(self):
-        self.state = 'draft'
+        self.state = 'closed'

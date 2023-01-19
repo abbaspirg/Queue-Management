@@ -17,11 +17,11 @@
                                        style="padding: 12px;
                                                 background-color: #71639e;
                                                 color: white;
-                                                width: 190px;
+                                                width: 230px;
                                                 border-radius: 19px;
                                                 transform: scale(1.2);">
                                         <div>
-                                            <i class="fa fa-users fa-3x"></i>
+                                            <i class="fa fa-users fa-3x"/>
                                             <br/>
                                             Today's Queue :
                                             <span>1</span>
@@ -31,11 +31,11 @@
                                        style="padding: 12px;
                                                 background-color: #71639e;
                                                 color: white;
-                                                width: 190px;
+                                                width: 230px;
                                                 border-radius: 19px;
                                                 transform: scale(1.2);">
                                         <div class="o_inner_box o_td_missed">
-                                            <i class="fa fa-user-times fa-3x"></i>
+                                            <i class="fa fa-user-times fa-3x"/>
                                             <br/>
                                             Today Missed :
                                             <span>1</span>
@@ -45,11 +45,11 @@
                                        style="padding: 12px;
                                                 background-color: #71639e;
                                                 color: white;
-                                                width: 190px;
+                                                width: 230px;
                                                 border-radius: 19px;
                                                 transform: scale(1.2);">
                                         <div>
-                                            <i class="fa fa-phone fa-3x"></i>
+                                            <i class="fa fa-phone fa-3x"/>
                                             <br/>
                                             Total Served :
                                             <span>0</span>
@@ -59,13 +59,13 @@
                                        style="padding: 12px;
                                                 background-color: #71639e;
                                                 color: white;
-                                                width: 190px;
+                                                width: 230px;
                                                 border-radius: 19px;
                                                 transform: scale(1.2);">
                                         <input type="hidden" id="token_left"
                                                name="token_left" value="1"/>
                                         <div>
-                                            <i class="fa fa-address-card fa-3x"></i>
+                                            <i class="fa fa-address-card fa-3x"/>
                                             <br/>
                                             Total Left :
                                             <span>1</span>
@@ -89,45 +89,36 @@
                                                 </h2>
                                                 <div class="btn-group"
                                                      style="width:100%;">
-                                                    <button class="btn btn-secondary fa fa-pie-chart">
+                                                    <button id="pie_chart" class="btn btn-secondary fa fa-pie-chart">
                                                     </button>
-                                                    <button class="btn btn-secondary fa fa-line-chart">
+                                                    <button id="line_chart" class="btn btn-secondary fa fa-line-chart">
                                                     </button>
                                                 </div>
                                                 <div>
-                                                    <div>
-                                                        <div>
-                                                            <div>
-                                                                <div class=""></div>
-                                                            </div>
-                                                            <div>
-                                                                <div class=""></div>
-                                                            </div>
-                                                        </div>
-                                                        <canvas width="609"
-                                                                height="304"
-                                                                style="display: block; width: 609px; height: 304px;"></canvas>
-                                                    </div>
-                                                </div>
-                                                <div style="margin-top: 84px; display: none;"
-                                                     data-type="qms">
-                                                    <div>
-                                                        <canvas id="chart_qms2"
-                                                                width="922"
-                                                                height="75"
-                                                                style="display: block; width: 922px; height: 75px;"></canvas>
+                                                    <div id="sample"
+                                                         style="width: 100%; height: 280px">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="row">
                                                     <div class="col-12">
+                                                        <br/>
                                                         <h4 style="color: #71639e;justify-content: center;display: flex;">
                                                             BRIEF SUMMARY
                                                         </h4>
+                                                        <br/>
+                                                        <br/>
+                                                        <br/>
                                                         <div class="row">
                                                             <a href="#"
-                                                               class="col-4">
+                                                               class="col-4"
+                                                               style="font-size: medium;
+                                                                                    background-color: #706a6a;
+                                                                                    color: white;
+                                                                                    border: 5px solid white;
+                                                                                    padding: 20px;
+                                                                                    border-radius: 15px;">
                                                                 <div>
                                                                     <div class="o_highlight">
                                                                         2
@@ -137,7 +128,13 @@
                                                                 </div>
                                                             </a>
                                                             <a href="#"
-                                                               class="col-4">
+                                                               class="col-4"
+                                                               style="font-size: medium;
+                                                                                    background-color: #706a6a;
+                                                                                    color: white;
+                                                                                    border: 5px solid white;
+                                                                                    padding: 20px;
+                                                                                    border-radius: 15px;">
                                                                 <div>
                                                                     <div class="o_highlight">
                                                                         0
@@ -147,7 +144,13 @@
                                                                 </div>
                                                             </a>
                                                             <a href="#"
-                                                               class="col-4">
+                                                               class="col-4"
+                                                               style="font-size: medium;
+                                                                                    background-color: #706a6a;
+                                                                                    color: white;
+                                                                                    border: 5px solid white;
+                                                                                    padding: 20px;
+                                                                                    border-radius: 15px;">
                                                                 <div>
                                                                     <div class="o_highlight">
                                                                         1
@@ -157,7 +160,13 @@
                                                                 </div>
                                                             </a>
                                                             <a href="#"
-                                                               class="col-4">
+                                                               class="col-4"
+                                                               style="font-size: medium;
+                                                                                    background-color: #706a6a;
+                                                                                    color: white;
+                                                                                    border: 5px solid white;
+                                                                                    padding: 20px;
+                                                                                    border-radius: 15px;">
                                                                 <div>
                                                                     <div class="o_highlight">
                                                                         0.29
@@ -166,7 +175,13 @@
                                                                 </div>
                                                             </a>
                                                             <a href="#"
-                                                               class="col-4">
+                                                               class="col-4"
+                                                               style="font-size: medium;
+                                                                                    background-color: #706a6a;
+                                                                                    color: white;
+                                                                                    border: 5px solid white;
+                                                                                    padding: 20px;
+                                                                                    border-radius: 15px;">
                                                                 <div>
                                                                     <div class="o_highlight">
                                                                         1
@@ -176,7 +191,13 @@
                                                                 </div>
                                                             </a>
                                                             <a href="#"
-                                                               class="col-4">
+                                                               class="col-4"
+                                                               style="font-size: medium;
+                                                                                    background-color: #706a6a;
+                                                                                    color: white;
+                                                                                    border: 5px solid white;
+                                                                                    padding: 20px;
+                                                                                    border-radius: 15px;">
                                                                 <div>
                                                                     <div class="o_highlight">
                                                                         0
@@ -187,42 +208,44 @@
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12 o_top_margin">
-                                                        <br/>
-                                                        <br/>
-                                                        <h4 style="color: #71639e;justify-content: center;display: flex;">AT TOP</h4>
-                                                        <div style="margin-top:10px;">
-                                                            <table class="table table-responsive-md table-hover"
-                                                                   style="width:95%;">
-                                                                <thead class="thead-light">
-                                                                    <tr>
-                                                                        <th>
-                                                                            DEPARTMENT
-                                                                        </th>
-                                                                        <th class="text-right">
-                                                                            SERVED
-                                                                        </th>
-                                                                        <th class="text-right">
-                                                                            CANCELLED
-                                                                        </th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            Mobile
-                                                                        </td>
-                                                                        <td class="text-right">
-                                                                            0
-                                                                        </td>
-                                                                        <td class="text-right">
-                                                                            1
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <br/>
+                                                <br/>
+                                                <h4 style="color: #71639e;justify-content: center;display: flex;">
+                                                    AT TOP
+                                                </h4>
+                                                <div style="padding: 300px;padding-top: 10px;">
+                                                    <table class="table table-responsive-md table-hover"
+                                                           style="width:100%;">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th class="text-center">
+                                                                    DEPARTMENT
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    SERVED
+                                                                </th>
+                                                                <th class="text-center">
+                                                                    CANCELLED
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="text-center">
+                                                                    Mobile
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    0
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    1
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </div>
                                         </div>

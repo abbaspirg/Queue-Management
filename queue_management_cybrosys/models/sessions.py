@@ -15,6 +15,7 @@ class Sessions(models.Model):
                               ('stopped', 'Stopped'),
                               ('closed', 'Closed'),
                               ], default='open')
+    date_session = fields.Date('Date', default=fields.Date.today())
 
     def session_open(self):
         self.state = 'in_progress'

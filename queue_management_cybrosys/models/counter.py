@@ -5,7 +5,7 @@ class Counter(models.Model):
     _name = 'counter'
     _description = 'Counter'
 
-    name = fields.Char()
+    name = fields.Char(required=True)
     user_id = fields.Many2one('res.users',
                               default=lambda self: self.env.user)
     state = fields.Selection([('draft', 'Unused'),

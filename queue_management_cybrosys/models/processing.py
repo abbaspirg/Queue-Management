@@ -16,3 +16,4 @@ class Processing(models.Model):
                               ('closed', 'Closed'),
                               ], default='open')
     current_token = fields.Char('token')
+    date_processing = fields.Date('Date', default=fields.Date.today())
