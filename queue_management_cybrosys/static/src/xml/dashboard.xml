@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="o_box" style="display:flex;
                                                           justify-content: space-evenly;">
-                                    <a href="#"
+                                    <a href="#" id="today_queue"
                                        style="padding: 12px;
                                                 background-color: #71639e;
                                                 color: white;
@@ -24,10 +24,10 @@
                                             <i class="fa fa-users fa-3x"/>
                                             <br/>
                                             Today's Queue :
-                                            <span>1</span>
+                                            <span id="one"></span>
                                         </div>
                                     </a>
-                                    <a href="#"
+                                    <a href="#" id="today_missed"
                                        style="padding: 12px;
                                                 background-color: #71639e;
                                                 color: white;
@@ -38,10 +38,10 @@
                                             <i class="fa fa-user-times fa-3x"/>
                                             <br/>
                                             Today Missed :
-                                            <span>1</span>
+                                            <span id="two"></span>
                                         </div>
                                     </a>
-                                    <a href="#"
+                                    <a href="#" id="today_served"
                                        style="padding: 12px;
                                                 background-color: #71639e;
                                                 color: white;
@@ -52,10 +52,10 @@
                                             <i class="fa fa-phone fa-3x"/>
                                             <br/>
                                             Total Served :
-                                            <span>0</span>
+                                            <span id="three"></span>
                                         </div>
                                     </a>
-                                    <a href="#"
+                                    <a href="#" id="today_left"
                                        style="padding: 12px;
                                                 background-color: #71639e;
                                                 color: white;
@@ -68,7 +68,7 @@
                                             <i class="fa fa-address-card fa-3x"/>
                                             <br/>
                                             Total Left :
-                                            <span>1</span>
+                                            <span id="four"></span>
                                         </div>
                                     </a>
                                 </div>
@@ -120,8 +120,7 @@
                                                                                     padding: 20px;
                                                                                     border-radius: 15px;">
                                                                 <div>
-                                                                    <div class="o_highlight">
-                                                                        2
+                                                                    <div class="o_highlight" id="five">
                                                                     </div>
                                                                     Token Till
                                                                     Today
@@ -136,8 +135,7 @@
                                                                                     padding: 20px;
                                                                                     border-radius: 15px;">
                                                                 <div>
-                                                                    <div class="o_highlight">
-                                                                        0
+                                                                    <div class="o_highlight" id="six">
                                                                     </div>
                                                                     Total
                                                                     Served
@@ -152,8 +150,7 @@
                                                                                     padding: 20px;
                                                                                     border-radius: 15px;">
                                                                 <div>
-                                                                    <div class="o_highlight">
-                                                                        1
+                                                                    <div class="o_highlight" id="seven">
                                                                     </div>
                                                                     Total
                                                                     Cancelled
@@ -168,8 +165,7 @@
                                                                                     padding: 20px;
                                                                                     border-radius: 15px;">
                                                                 <div>
-                                                                    <div class="o_highlight">
-                                                                        0.29
+                                                                    <div class="o_highlight" id="eight">
                                                                     </div>
                                                                     Tokens/Day
                                                                 </div>
@@ -183,8 +179,7 @@
                                                                                     padding: 20px;
                                                                                     border-radius: 15px;">
                                                                 <div>
-                                                                    <div class="o_highlight">
-                                                                        1
+                                                                    <div class="o_highlight" id="nine">
                                                                     </div>
                                                                     Total
                                                                     Counter
@@ -199,8 +194,7 @@
                                                                                     padding: 20px;
                                                                                     border-radius: 15px;">
                                                                 <div>
-                                                                    <div class="o_highlight">
-                                                                        0
+                                                                    <div class="o_highlight" id="ten">
                                                                     </div>
                                                                     Current
                                                                     Sessions
@@ -232,18 +226,7 @@
                                                                 </th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="text-center">
-                                                                    Mobile
-                                                                </td>
-                                                                <td class="text-center">
-                                                                    0
-                                                                </td>
-                                                                <td class="text-center">
-                                                                    1
-                                                                </td>
-                                                            </tr>
+                                                        <tbody id="at_top_details">
                                                         </tbody>
                                                     </table>
                                                 </div>

@@ -18,3 +18,4 @@ class Tokens(models.Model):
                               ('cancelled', 'Cancelled'),
                               ], default='draft')
     date_token = fields.Date('Date', default=fields.Date.today())
+    counter_id = fields.Many2one('counter')

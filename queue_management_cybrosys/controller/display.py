@@ -1,4 +1,4 @@
-from odoo import http
+from odoo import http, fields
 from odoo.http import request
 
 
@@ -40,7 +40,8 @@ class Display(http.Controller):
             ('state', '=', 'in_progress')])
         last_token = request.env['tokens'].sudo().search([(
             'session_id', '=', session.id),
-            ('department_id', '=', department.id)],
+            ('department_id', '=', department.id),
+            ('date_token', '=', fields.Date.today())],
             order='create_date desc', limit=1)
         if last_token:
             token = int(last_token.token)
@@ -83,9 +84,20 @@ class Display(http.Controller):
                 ('mobile', '=', post.get('mobile')),
                 ('name', '=', post.get('user')),
             ])
-            tokens_update.sudo().write({
-                'state': 'done',
-            })
+            if post.get('token_state') == 'cancel':
+                tokens_update.sudo().write({
+                    'state': 'cancelled',
+                    'customer_query': post.get('query'),
+                    'feedback': post.get('feedback'),
+                    'counter_id': counter_id,
+                })
+            else:
+                tokens_update.sudo().write({
+                    'state': 'done',
+                    'customer_query': post.get('query'),
+                    'feedback': post.get('feedback'),
+                    'counter_id': counter_id,
+                })
         counter = request.env['processing'].sudo().search([
             ('counter_id', '=', counter_id),
             ('state', '=', 'in_progress')], order='create_date desc', limit=1)
@@ -95,7 +107,8 @@ class Display(http.Controller):
             'department': counter.department_id.name
         }]
         tokens = request.env['tokens'].sudo().search([
-            ('department_id', '=', counter.department_id.id)])
+            ('department_id', '=', counter.department_id.id),
+            ('date_token', '=', fields.Date.today())])
         vals = []
         si_no = 0
         for rec in tokens:
@@ -112,7 +125,7 @@ class Display(http.Controller):
                 si_no += 1
                 vals.append({
                     'si_no': si_no,
-                    'counter': 'Counter 1',
+                    'counter': counter.counter_id.name,
                     'token': rec.token,
                     'called': 'Yes',
                     'recall': 'Yes',
@@ -143,7 +156,9 @@ class Display(http.Controller):
                 ('counter_id', '=', counter_id),
             ])
             tokens = request.env['tokens'].sudo().search([
-                ('state', '=', 'draft')], order='create_date asc', limit=1)
+                ('state', '=', 'draft'),
+                ('department_id', '=', current_session.department_id.id),
+                ('date_token', '=', fields.Date.today())], order='create_date asc', limit=1)
             vals = []
             tokens.sudo().write({
                 'state': 'in_progress',
